@@ -1,0 +1,20 @@
+{
+  "userSucess": {
+    "username": "Elliot Dantas",
+    "useremal": "elliotdantasas@gmail.com",
+    "userpassword": "123445",
+    "userday": "8",
+    "usermonth": "December",
+    "useryear": "1989",
+    "userFirstname": "Elliot",
+    "userLastName": "Dantas",
+    "userCompany": "IModas",
+    "userStreet": "Rua Alameda dos Sonhos 399",
+    "userStreetTwo": "Rua Alameda dos Sonhos 403",
+    "userCountry": "Canada",
+    "userState": "British Columbia",
+    "userCity": "Vancouver",
+    "userPostalCode": "37704450",
+    "userNumber": "12534567890"
+  }
+}
