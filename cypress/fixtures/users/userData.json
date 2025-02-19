@@ -2,6 +2,7 @@
   "userSucess": {
     "username": "Elliot Dantas",
     "useremal": "elliotdantasas@gmail.com",
+    "useremailcorrect": "elliotdantasasss@gmail.com",
     "userpassword": "123445",
     "userday": "8",
     "usermonth": "December",
@@ -16,5 +17,10 @@
     "userCity": "Vancouver",
     "userPostalCode": "37704450",
     "userNumber": "12534567890"
+  },
+  "userError": {
+    "username": "Elliot Dantas",
+    "useremal": "elliodantasas@gmail.com",
+    "userpassword": "123445"
   }
 }

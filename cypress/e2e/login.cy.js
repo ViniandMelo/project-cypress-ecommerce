@@ -1,37 +1,8 @@
 import userData from '../fixtures/users/userData.json'
+import { selectorsList } from '../selectors/loginSelectors'; // uso de{} pois é um export nomeado e não padrão
 
 describe('pagina de login', () => {
 
-  const selectorsList = {
-
-    usernamField:"[data-qa='signup-name']",
-    emailField: "[data-qa='signup-email']",
-    regiterButton:"[data-qa='signup-button']",
-    imputGender: '#id_gender1',
-    passwordField: "[data-qa='password']",
-    daysSelector: "[data-qa='days']",
-    monthsSelector:"[data-qa='months']",
-    yearsSelector: "[data-qa='years']",
-    newsletterContains: "[for='newsletter']",
-    newsletterCheckbox: "#newsletter",
-    addressCheckbox: "#optin",
-    firstnameField: "[data-qa='first_name']",
-    lastnameField: "[data-qa='last_name']",
-    companyField: "[data-qa='company']",
-    adressOneField: "[data-qa='address']",
-    adressTwoField: "[data-qa='address2']",
-    countrySelector: "[data-qa='country']",
-    stateSelector: "[data-qa='state']",
-    citySelector: "[data-qa='city']",
-    postalCodeField: "[data-qa='zipcode']",
-    mobileNumberField: "[data-qa='mobile_number']",
-    submitButton: "[data-qa='create-account']",
-    continueButtonOne: "[data-qa='continue-button']",
-    deleteButton: "[href='/delete_account']",
-    continueButtonTwo: "[data-qa='continue-button']",
-    homeField: ".fa-home",
-    logimField:"[href='/login']"
-  }
 
   it('Registrar Usuario', () => {
     cy.visit('')
@@ -72,5 +43,21 @@ describe('pagina de login', () => {
     cy.get(selectorsList.deleteButton).click()
     cy.get(selectorsList.continueButtonTwo).click()
 
-  })
+  });
+  it('Login Usuario', () => {
+    cy.visit('')
+    cy.get(selectorsList.logimField).click()
+    cy.get(selectorsList.loginEmailField).type(userData.userSucess.useremailcorrect)
+    cy.get(selectorsList.loginPasswordField).type(userData.userSucess.userpassword)
+    cy.get(selectorsList.loginButton).click()
+    cy.get(selectorsList.deleteButton).should('be.visible')
+  });
+  it('Login Usuario Incorreto', () => {
+    cy.visit('')
+    cy.get(selectorsList.logimField).click()
+    cy.get(selectorsList.loginEmailField).type(userData.userError.useremal)
+    cy.get(selectorsList.loginPasswordField).type(userData.userError.userpassword)
+    cy.get(selectorsList.loginButton).click()
+    cy.get(selectorsList.alertText).contains('Your email or password is incorrect!').should('be.visible')
+  });
 })
