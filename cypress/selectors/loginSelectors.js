@@ -11,6 +11,7 @@ export const selectorsList = {
     newsletterContains: "[for='newsletter']",
     newsletterCheckbox: "#newsletter",
     addressCheckbox: "#optin",
+    bSelector: "b",
 
     firstnameField: "[data-qa='first_name']",
     lastnameField: "[data-qa='last_name']",

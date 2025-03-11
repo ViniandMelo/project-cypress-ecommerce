@@ -15,3 +15,4 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './login_commands'; // Isso carrega o arquivo commands.js

@@ -1,8 +1,7 @@
 {
   "userSucess": {
     "username": "Elliot Dantas",
-    "useremal": "elliotdantasas@gmail.com",
-    "useremailcorrect": "elliotdantasasss@gmail.com",
+    "useremalcadastro": "elliotdantasas@gmail.com",
     "userpassword": "123445",
     "userday": "8",
     "usermonth": "December",
@@ -16,11 +15,16 @@
     "userState": "British Columbia",
     "userCity": "Vancouver",
     "userPostalCode": "37704450",
-    "userNumber": "12534567890"
+    "userNumber": "12534567890",
+
+    "useremalogin": "elliotdantasasss@gmail.com"
   },
   "userError": {
-    "username": "Elliot Dantas",
-    "useremal": "elliodantasas@gmail.com",
-    "userpassword": "123445"
+    "usernameincorrect": "Ellioot Dantas",
+    "useremalincorrect": "flliodantasas@gmail.com",
+    "userpasswordincorrect": "123432445",
+
+    "errorMessage": "Your email or password is incorrect!",
+    "createMessage": "Account Created!"
   }
 }
