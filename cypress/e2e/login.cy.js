@@ -1,14 +1,17 @@
 import userData from '../fixtures/users/userData.json'; // Importa os dados do usuário para uso nos testes
 import { selectorsList } from '../selectors/loginSelectors'; // Importa os seletores da página de login
 
+const Chance = require('chance') // Importa a biblioteca Chance para gerar dados aleatórios
+const chance = new Chance()
+
 describe('pagina de login', () => {
 
   it('Registrar Usuario', () => {
     cy.visitAndClickLogin() // Visita a página inicial e clica no botão de login
     cy.get('h2').contains('New User Signup!') // Verifica se o texto "New User Signup!" está visível
     cy.location('pathname').should('eq', '/login') // Verifica se a URL contém '/login'
-    cy.get(selectorsList.usernamField).type(userData.userSucess.username) // Preenche o campo de nome de usuário
-    cy.get(selectorsList.emailField).type(userData.userSucess.useremalcadastro) // Preenche o campo de email
+    cy.get(selectorsList.usernamField).type(chance.name()) // Preenche o campo de nome de usuário
+    cy.get(selectorsList.emailField).type(chance.email()) // Preenche o campo de email
     cy.get(selectorsList.regiterButton).click() // Clica no botão de registro
 
     cy.get(selectorsList.bSelector).contains('Enter Account Information') // Verifica se o texto "Enter Account Information" está visível
@@ -23,9 +26,9 @@ describe('pagina de login', () => {
     cy.get(selectorsList.addressCheckbox).click() // Marca o checkbox de ofertas especiais
 
     cy.get(selectorsList.bSelector).contains('Address Information') // Verifica se o texto "Address Information" está visível
-    cy.get(selectorsList.firstnameField).type(userData.userSucess.userFirstname) // Preenche o campo de primeiro nome
-    cy.get(selectorsList.lastnameField).type(userData.userSucess.userLastName) // Preenche o campo de sobrenome
-    cy.get(selectorsList.companyField).type(userData.userSucess.userCompany) // Preenche o campo de empresa
+    cy.get(selectorsList.firstnameField).type(chance.first()) // Preenche o campo de primeiro nome
+    cy.get(selectorsList.lastnameField).type(chance.last()) // Preenche o campo de sobrenome
+    cy.get(selectorsList.companyField).type(chance.company()) // Preenche o campo de empresa
     cy.get(selectorsList.adressOneField).type(userData.userSucess.userStreet) // Preenche o campo de endereço 1
     cy.get(selectorsList.adressTwoField).type(userData.userSucess.userStreetTwo) // Preenche o campo de endereço 2
     cy.get(selectorsList.countrySelector).select(userData.userSucess.userCountry) // Seleciona o país
@@ -49,7 +52,7 @@ describe('pagina de login', () => {
 
   it('Login Usuario Incorreto', () => {
     cy.visit('') // Visita a página inicial sem clicar no botão de login
-    cy.login(userData.userError.useremalincorrect, userData.userError.userpasswordincorrect) // Tenta fazer login com email e senha incorretos
+    cy.login(chance.email(), userData.userError.userpasswordincorrect) // Tenta fazer login com email e senha incorretos
     cy.verifyMessage(selectorsList.alertText, userData.userError.errorMessage) // Verifica se a mensagem de erro é exibida
   });
 });
