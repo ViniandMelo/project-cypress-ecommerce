@@ -45,12 +45,6 @@ npx cypress open
 
 ## ✍️ Author
 ```sh
-[Your Name]
-```
-
-## 📜 License
-```sh
-This project is licensed under the MIT License.
-```
+Vinícius Melo
 ```
 
