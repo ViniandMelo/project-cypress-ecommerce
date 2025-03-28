@@ -8,19 +8,21 @@ jobs:
       - name: Checkout           # Install npm dependencies, cache them correctly
         uses: actions/checkout@v4 # and run all Cypress tests
 
-      - name: Cypress run # Oque a gente precisamos fazer antes do cypress rodar os testes
+      - name: Install dependencies
+        run: npm install          # Instala as dependências necessárias
+
+      - name: Cypress run # O que a gente precisa fazer antes do cypress rodar os testes
         uses: cypress-io/github-action@v6
         with:
-            start: 'npm run dev'
-            build: 'npm run build' #Pra ter certeza que a build não quebre antes de ir pra produção
-            
+            start: 'npm run dev'  # Se você tiver um comando para iniciar o projeto
+            # Remova o comando build se você não precisar dele
+          
       - uses: actions/upload-artifact@v4
         if: always()
         with: 
             name: Cypress-Artifacts
-            path: / 
+            path: 
                 cypress/screenshots
                 cypress/videos
                 cypress/results
             if-no-files-found: ignore
-
