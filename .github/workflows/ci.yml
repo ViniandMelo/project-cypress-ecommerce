@@ -1,0 +1,26 @@
+name: CI
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+    steps:
+
+      - name: Checkout           # Install npm dependencies, cache them correctly
+        uses: actions/checkout@v4 # and run all Cypress tests
+
+      - name: Cypress run # Oque a gente precisamos fazer antes do cypress rodar os testes
+        uses: cypress-io/github-action@v6
+        with:
+            start: 'npm run dev'
+            build: 'npm run build' #Pra ter certeza que a build não quebre antes de ir pra produção
+            
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: 
+            name: Cypress-Artifacts
+            path: / 
+                cypress/screenshots
+                cypress/videos
+                cypress/results
+            if-no-files-found: ignore
+

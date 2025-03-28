@@ -1,3 +1,6 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.defaultFormatter": "mattbrannon.prettiest-eslint",
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange" // Optional but recommended
 }
