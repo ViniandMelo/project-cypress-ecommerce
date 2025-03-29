@@ -1,5 +1,10 @@
 name: CI
-on: push
+on:
+  push:  # Roda sempre que houver um push
+  schedule:
+    - cron: "0 0 * * 1"  # Roda automaticamente toda segunda-feira à meia-noite UTC
+  workflow_dispatch:  # Permite rodar manualmente, se necessário
+  
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
