@@ -1,11 +1,11 @@
-```md
-#Cypress Test Automation
 
-##📌Description
+# Cypress Test Automation
+
+## 📌Description
 This is a Cypress project for automated testing of the login and user registration functionality. The tests validate the user authentication process, including successful login, incorrect login attempts, and user registration.
 
-##🚀Installation
-###1️⃣ Clone the repository
+## 🚀Installation
+### 1️⃣ Clone the repository
 ```sh
 git clone https://github.com/your-username/your-repository.git
 ```
