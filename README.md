@@ -7,7 +7,7 @@ This is a Cypress project for automated testing of the login and user registrati
 ## 🚀Installation
 ### 1️⃣ Clone the repository
 ```sh
-git clone https://github.com/your-username/your-repository.git
+[git clone https://github.com/your-username/your-repository.git](https://github.com/ViniandMelo/project-cypress-ecommerce.git)
 ```
 ### 2️⃣ Navigate to the project directory
 ```sh
